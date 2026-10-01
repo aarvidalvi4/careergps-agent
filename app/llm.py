@@ -330,9 +330,9 @@ class MockLLM(BaseLLM):
             elif name == "build_roadmap":
                 args = {"weeks": weeks}
             elif name == "draft_outreach":
-                job_id = _first_id(_safe_json(results.get("match_jobs", "")))
-                if job_id is not None:
-                    args = {"job_id": job_id}
+                opening_id = _first_id(_safe_json(results.get("match_jobs", "")))
+                if opening_id is not None:
+                    args = {"opening_id": opening_id}
             return LLMResponse(
                 text=self.THOUGHTS[name],
                 tool_calls=[ToolCall(id=f"mock_{step}_{name}", name=name, arguments=args)],

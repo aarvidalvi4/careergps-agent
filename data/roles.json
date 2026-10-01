@@ -1,0 +1,2638 @@
+[
+  {
+    "role": "Data Analyst",
+    "family": "data",
+    "aliases": [
+      "data analytics",
+      "mis analyst",
+      "mis executive",
+      "business intelligence analyst",
+      "bi analyst",
+      "reporting analyst",
+      "junior data analyst"
+    ],
+    "summary": "Turns raw business data into reports, dashboards and insights that help teams make decisions.",
+    "required_skills": [
+      {
+        "name": "SQL",
+        "importance": 3,
+        "category": "databases",
+        "aliases": [
+          "mysql",
+          "postgresql",
+          "postgres",
+          "sql server",
+          "ms sql",
+          "t-sql",
+          "pl/sql",
+          "sqlite",
+          "oracle sql",
+          "sql queries",
+          "joins"
+        ],
+        "related": [
+          "Databases"
+        ],
+        "resources": [
+          {
+            "title": "Intro to SQL",
+            "url": "https://www.kaggle.com/learn/intro-to-sql",
+            "type": "course"
+          },
+          {
+            "title": "Advanced SQL",
+            "url": "https://www.kaggle.com/learn/advanced-sql",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Excel",
+        "importance": 3,
+        "category": "tools",
+        "aliases": [
+          "ms excel",
+          "microsoft excel",
+          "advanced excel",
+          "google sheets",
+          "spreadsheets",
+          "vlookup",
+          "xlookup",
+          "pivot tables",
+          "excel formulas"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Excel help & learning (Microsoft)",
+            "url": "https://support.microsoft.com/en-us/excel/",
+            "type": "course"
+          },
+          {
+            "title": "Excel: Foundations (GCF LearnFree)",
+            "url": "https://www.learnfree.org/series/excel-foundations",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Data Visualization",
+        "importance": 3,
+        "category": "analytics",
+        "aliases": [
+          "power bi",
+          "tableau",
+          "matplotlib",
+          "seaborn",
+          "plotly",
+          "dashboards",
+          "looker studio",
+          "google data studio",
+          "data viz",
+          "charts"
+        ],
+        "related": [
+          "Excel"
+        ],
+        "resources": [
+          {
+            "title": "Data Visualization",
+            "url": "https://www.kaggle.com/learn/data-visualization",
+            "type": "course"
+          },
+          {
+            "title": "Get started with Microsoft data analytics: Power BI (Microsoft Learn)",
+            "url": "https://learn.microsoft.com/en-us/training/paths/data-analytics-microsoft/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Statistics",
+        "importance": 2,
+        "category": "math",
+        "aliases": [
+          "descriptive statistics",
+          "inferential statistics",
+          "probability",
+          "hypothesis testing",
+          "a/b testing",
+          "regression analysis",
+          "statistical analysis"
+        ],
+        "related": [
+          "Excel"
+        ],
+        "resources": [
+          {
+            "title": "Statistics and probability (Khan Academy)",
+            "url": "https://www.khanacademy.org/math/statistics-probability",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Python",
+        "importance": 2,
+        "category": "programming",
+        "aliases": [
+          "python3",
+          "python 3",
+          "py",
+          "core python"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Python",
+            "url": "https://www.kaggle.com/learn/python",
+            "type": "course"
+          },
+          {
+            "title": "The Python Tutorial",
+            "url": "https://docs.python.org/3/tutorial/",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Pandas",
+        "importance": 2,
+        "category": "analytics",
+        "aliases": [
+          "numpy",
+          "dataframes",
+          "jupyter",
+          "jupyter notebook",
+          "pandas library"
+        ],
+        "related": [
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "Pandas",
+            "url": "https://www.kaggle.com/learn/pandas",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Data Cleaning",
+        "importance": 2,
+        "category": "analytics",
+        "aliases": [
+          "data wrangling",
+          "data preprocessing",
+          "data preparation",
+          "etl",
+          "power query",
+          "missing values",
+          "data quality"
+        ],
+        "related": [
+          "Pandas",
+          "Excel",
+          "SQL"
+        ],
+        "resources": [
+          {
+            "title": "Data Cleaning",
+            "url": "https://www.kaggle.com/learn/data-cleaning",
+            "type": "course"
+          }
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "Machine Learning",
+        "importance": 1,
+        "category": "ml",
+        "aliases": [
+          "ml",
+          "scikit-learn",
+          "sklearn",
+          "supervised learning",
+          "unsupervised learning",
+          "regression",
+          "classification",
+          "clustering",
+          "random forest",
+          "xgboost",
+          "predictive modelling",
+          "predictive modeling"
+        ],
+        "related": [
+          "Statistics",
+          "Deep Learning"
+        ],
+        "resources": [
+          {
+            "title": "Intro to Machine Learning",
+            "url": "https://www.kaggle.com/learn/intro-to-machine-learning",
+            "type": "course"
+          },
+          {
+            "title": "Intermediate Machine Learning",
+            "url": "https://www.kaggle.com/learn/intermediate-machine-learning",
+            "type": "course"
+          },
+          {
+            "title": "NPTEL: Introduction to Machine Learning (IIT Madras)",
+            "url": "https://nptel.ac.in/courses/106106139",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "importance": 1,
+        "category": "tools",
+        "aliases": [
+          "github",
+          "gitlab",
+          "bitbucket",
+          "version control"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Pro Git book",
+            "url": "https://git-scm.com/book/en/v2",
+            "type": "book"
+          }
+        ]
+      },
+      {
+        "name": "Communication",
+        "importance": 1,
+        "category": "soft skills",
+        "aliases": [
+          "presentation skills",
+          "data storytelling",
+          "storytelling",
+          "report writing",
+          "stakeholder communication",
+          "business communication"
+        ],
+        "related": [],
+        "resources": []
+      }
+    ],
+    "project_expectations": [
+      "An end-to-end analysis of a real public dataset: clean it, answer business questions with SQL or Pandas, and present findings.",
+      "An interactive dashboard (Power BI, Tableau or Looker Studio) with clear KPIs, published or shared as a link."
+    ]
+  },
+  {
+    "role": "Data Scientist",
+    "family": "data",
+    "aliases": [
+      "data science",
+      "junior data scientist",
+      "associate data scientist",
+      "data science intern"
+    ],
+    "summary": "Builds statistical and machine learning models on data to predict outcomes and explain what drives them.",
+    "required_skills": [
+      {
+        "name": "Python",
+        "importance": 3,
+        "category": "programming",
+        "aliases": [
+          "python3",
+          "python 3",
+          "py",
+          "core python"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Python",
+            "url": "https://www.kaggle.com/learn/python",
+            "type": "course"
+          },
+          {
+            "title": "The Python Tutorial",
+            "url": "https://docs.python.org/3/tutorial/",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Machine Learning",
+        "importance": 3,
+        "category": "ml",
+        "aliases": [
+          "ml",
+          "scikit-learn",
+          "sklearn",
+          "supervised learning",
+          "unsupervised learning",
+          "regression",
+          "classification",
+          "clustering",
+          "random forest",
+          "xgboost",
+          "predictive modelling",
+          "predictive modeling"
+        ],
+        "related": [
+          "Statistics",
+          "Deep Learning"
+        ],
+        "resources": [
+          {
+            "title": "Intro to Machine Learning",
+            "url": "https://www.kaggle.com/learn/intro-to-machine-learning",
+            "type": "course"
+          },
+          {
+            "title": "Intermediate Machine Learning",
+            "url": "https://www.kaggle.com/learn/intermediate-machine-learning",
+            "type": "course"
+          },
+          {
+            "title": "NPTEL: Introduction to Machine Learning (IIT Madras)",
+            "url": "https://nptel.ac.in/courses/106106139",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Statistics",
+        "importance": 3,
+        "category": "math",
+        "aliases": [
+          "descriptive statistics",
+          "inferential statistics",
+          "probability",
+          "hypothesis testing",
+          "a/b testing",
+          "regression analysis",
+          "statistical analysis"
+        ],
+        "related": [
+          "Excel"
+        ],
+        "resources": [
+          {
+            "title": "Statistics and probability (Khan Academy)",
+            "url": "https://www.khanacademy.org/math/statistics-probability",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Pandas",
+        "importance": 3,
+        "category": "analytics",
+        "aliases": [
+          "numpy",
+          "dataframes",
+          "jupyter",
+          "jupyter notebook",
+          "pandas library"
+        ],
+        "related": [
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "Pandas",
+            "url": "https://www.kaggle.com/learn/pandas",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "SQL",
+        "importance": 2,
+        "category": "databases",
+        "aliases": [
+          "mysql",
+          "postgresql",
+          "postgres",
+          "sql server",
+          "ms sql",
+          "t-sql",
+          "pl/sql",
+          "sqlite",
+          "oracle sql",
+          "sql queries",
+          "joins"
+        ],
+        "related": [
+          "Databases"
+        ],
+        "resources": [
+          {
+            "title": "Intro to SQL",
+            "url": "https://www.kaggle.com/learn/intro-to-sql",
+            "type": "course"
+          },
+          {
+            "title": "Advanced SQL",
+            "url": "https://www.kaggle.com/learn/advanced-sql",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Data Visualization",
+        "importance": 2,
+        "category": "analytics",
+        "aliases": [
+          "power bi",
+          "tableau",
+          "matplotlib",
+          "seaborn",
+          "plotly",
+          "dashboards",
+          "looker studio",
+          "google data studio",
+          "data viz",
+          "charts"
+        ],
+        "related": [
+          "Excel"
+        ],
+        "resources": [
+          {
+            "title": "Data Visualization",
+            "url": "https://www.kaggle.com/learn/data-visualization",
+            "type": "course"
+          },
+          {
+            "title": "Get started with Microsoft data analytics: Power BI (Microsoft Learn)",
+            "url": "https://learn.microsoft.com/en-us/training/paths/data-analytics-microsoft/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Feature Engineering",
+        "importance": 2,
+        "category": "ml",
+        "aliases": [
+          "feature selection",
+          "feature extraction",
+          "one-hot encoding",
+          "feature scaling",
+          "dimensionality reduction",
+          "pca"
+        ],
+        "related": [
+          "Pandas",
+          "Machine Learning"
+        ],
+        "resources": [
+          {
+            "title": "Feature Engineering",
+            "url": "https://www.kaggle.com/learn/feature-engineering",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Data Cleaning",
+        "importance": 2,
+        "category": "analytics",
+        "aliases": [
+          "data wrangling",
+          "data preprocessing",
+          "data preparation",
+          "etl",
+          "power query",
+          "missing values",
+          "data quality"
+        ],
+        "related": [
+          "Pandas",
+          "Excel",
+          "SQL"
+        ],
+        "resources": [
+          {
+            "title": "Data Cleaning",
+            "url": "https://www.kaggle.com/learn/data-cleaning",
+            "type": "course"
+          }
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "Deep Learning",
+        "importance": 1,
+        "category": "ml",
+        "aliases": [
+          "neural networks",
+          "pytorch",
+          "tensorflow",
+          "keras",
+          "cnn",
+          "rnn",
+          "lstm",
+          "ann",
+          "transformers"
+        ],
+        "related": [
+          "Machine Learning"
+        ],
+        "resources": [
+          {
+            "title": "Intro to Deep Learning",
+            "url": "https://www.kaggle.com/learn/intro-to-deep-learning",
+            "type": "course"
+          },
+          {
+            "title": "Learn the Basics (PyTorch)",
+            "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "NLP",
+        "importance": 1,
+        "category": "ml",
+        "aliases": [
+          "natural language processing",
+          "nltk",
+          "spacy",
+          "hugging face",
+          "huggingface",
+          "bert",
+          "llm",
+          "llms",
+          "text classification",
+          "sentiment analysis"
+        ],
+        "related": [
+          "Deep Learning",
+          "Machine Learning"
+        ],
+        "resources": [
+          {
+            "title": "Hugging Face LLM Course",
+            "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "importance": 1,
+        "category": "tools",
+        "aliases": [
+          "github",
+          "gitlab",
+          "bitbucket",
+          "version control"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Pro Git book",
+            "url": "https://git-scm.com/book/en/v2",
+            "type": "book"
+          }
+        ]
+      },
+      {
+        "name": "Cloud Basics",
+        "importance": 1,
+        "category": "devops",
+        "aliases": [
+          "aws",
+          "azure",
+          "gcp",
+          "google cloud",
+          "cloud computing",
+          "ec2",
+          "s3",
+          "aws cloud practitioner",
+          "az-900"
+        ],
+        "related": [
+          "Linux",
+          "Docker"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Cloud Computing (IIT Kharagpur)",
+            "url": "https://nptel.ac.in/courses/106105167",
+            "type": "course"
+          }
+        ]
+      }
+    ],
+    "project_expectations": [
+      "A supervised ML project on a real dataset with EDA, feature engineering, a baseline vs. tuned model, and honest evaluation metrics.",
+      "A notebook or report that explains model results to a non-technical reader (e.g. a Kaggle notebook or GitHub write-up)."
+    ]
+  },
+  {
+    "role": "ML Engineer",
+    "family": "ml",
+    "aliases": [
+      "machine learning engineer",
+      "ai engineer",
+      "ai/ml engineer",
+      "ai ml engineer",
+      "mle",
+      "deep learning engineer",
+      "ml developer"
+    ],
+    "summary": "Trains, packages and deploys machine learning models so they run reliably inside real products.",
+    "required_skills": [
+      {
+        "name": "Python",
+        "importance": 3,
+        "category": "programming",
+        "aliases": [
+          "python3",
+          "python 3",
+          "py",
+          "core python"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Python",
+            "url": "https://www.kaggle.com/learn/python",
+            "type": "course"
+          },
+          {
+            "title": "The Python Tutorial",
+            "url": "https://docs.python.org/3/tutorial/",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Machine Learning",
+        "importance": 3,
+        "category": "ml",
+        "aliases": [
+          "ml",
+          "scikit-learn",
+          "sklearn",
+          "supervised learning",
+          "unsupervised learning",
+          "regression",
+          "classification",
+          "clustering",
+          "random forest",
+          "xgboost",
+          "predictive modelling",
+          "predictive modeling"
+        ],
+        "related": [
+          "Statistics",
+          "Deep Learning"
+        ],
+        "resources": [
+          {
+            "title": "Intro to Machine Learning",
+            "url": "https://www.kaggle.com/learn/intro-to-machine-learning",
+            "type": "course"
+          },
+          {
+            "title": "Intermediate Machine Learning",
+            "url": "https://www.kaggle.com/learn/intermediate-machine-learning",
+            "type": "course"
+          },
+          {
+            "title": "NPTEL: Introduction to Machine Learning (IIT Madras)",
+            "url": "https://nptel.ac.in/courses/106106139",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Deep Learning",
+        "importance": 3,
+        "category": "ml",
+        "aliases": [
+          "neural networks",
+          "pytorch",
+          "tensorflow",
+          "keras",
+          "cnn",
+          "rnn",
+          "lstm",
+          "ann",
+          "transformers"
+        ],
+        "related": [
+          "Machine Learning"
+        ],
+        "resources": [
+          {
+            "title": "Intro to Deep Learning",
+            "url": "https://www.kaggle.com/learn/intro-to-deep-learning",
+            "type": "course"
+          },
+          {
+            "title": "Learn the Basics (PyTorch)",
+            "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Data Structures & Algorithms",
+        "importance": 2,
+        "category": "programming",
+        "aliases": [
+          "dsa",
+          "data structures",
+          "algorithms",
+          "problem solving",
+          "competitive programming",
+          "leetcode",
+          "codechef",
+          "codeforces",
+          "hackerrank"
+        ],
+        "related": [
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Programming, Data Structures and Algorithms using Python",
+            "url": "https://nptel.ac.in/courses/106106145",
+            "type": "course"
+          },
+          {
+            "title": "Algorithms (Khan Academy)",
+            "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "importance": 2,
+        "category": "tools",
+        "aliases": [
+          "github",
+          "gitlab",
+          "bitbucket",
+          "version control"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Pro Git book",
+            "url": "https://git-scm.com/book/en/v2",
+            "type": "book"
+          }
+        ]
+      },
+      {
+        "name": "REST APIs",
+        "importance": 2,
+        "category": "backend",
+        "aliases": [
+          "rest",
+          "rest api",
+          "restful",
+          "restful apis",
+          "api development",
+          "api design",
+          "postman",
+          "swagger",
+          "openapi",
+          "fastapi",
+          "flask",
+          "http apis",
+          "fetch api",
+          "axios"
+        ],
+        "related": [
+          "Backend Framework",
+          "JavaScript",
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "FastAPI Tutorial - User Guide",
+            "url": "https://fastapi.tiangolo.com/tutorial/",
+            "type": "docs"
+          },
+          {
+            "title": "An overview of HTTP (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Docker",
+        "importance": 2,
+        "category": "devops",
+        "aliases": [
+          "containers",
+          "containerization",
+          "docker compose",
+          "dockerfile",
+          "kubernetes",
+          "k8s"
+        ],
+        "related": [
+          "Linux"
+        ],
+        "resources": [
+          {
+            "title": "Get started with Docker",
+            "url": "https://docs.docker.com/get-started/",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Pandas",
+        "importance": 2,
+        "category": "analytics",
+        "aliases": [
+          "numpy",
+          "dataframes",
+          "jupyter",
+          "jupyter notebook",
+          "pandas library"
+        ],
+        "related": [
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "Pandas",
+            "url": "https://www.kaggle.com/learn/pandas",
+            "type": "course"
+          }
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "MLOps",
+        "importance": 1,
+        "category": "ml",
+        "aliases": [
+          "mlflow",
+          "model deployment",
+          "model serving",
+          "ml pipelines",
+          "kubeflow",
+          "dvc"
+        ],
+        "related": [
+          "Docker",
+          "Machine Learning"
+        ],
+        "resources": [
+          {
+            "title": "MLOps Zoomcamp (DataTalks.Club)",
+            "url": "https://github.com/DataTalksClub/mlops-zoomcamp",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Cloud Basics",
+        "importance": 1,
+        "category": "devops",
+        "aliases": [
+          "aws",
+          "azure",
+          "gcp",
+          "google cloud",
+          "cloud computing",
+          "ec2",
+          "s3",
+          "aws cloud practitioner",
+          "az-900"
+        ],
+        "related": [
+          "Linux",
+          "Docker"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Cloud Computing (IIT Kharagpur)",
+            "url": "https://nptel.ac.in/courses/106105167",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "NLP",
+        "importance": 1,
+        "category": "ml",
+        "aliases": [
+          "natural language processing",
+          "nltk",
+          "spacy",
+          "hugging face",
+          "huggingface",
+          "bert",
+          "llm",
+          "llms",
+          "text classification",
+          "sentiment analysis"
+        ],
+        "related": [
+          "Deep Learning",
+          "Machine Learning"
+        ],
+        "resources": [
+          {
+            "title": "Hugging Face LLM Course",
+            "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Computer Vision",
+        "importance": 1,
+        "category": "ml",
+        "aliases": [
+          "opencv",
+          "image processing",
+          "object detection",
+          "image classification",
+          "yolo"
+        ],
+        "related": [
+          "Deep Learning"
+        ],
+        "resources": [
+          {
+            "title": "Computer Vision",
+            "url": "https://www.kaggle.com/learn/computer-vision",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "SQL",
+        "importance": 1,
+        "category": "databases",
+        "aliases": [
+          "mysql",
+          "postgresql",
+          "postgres",
+          "sql server",
+          "ms sql",
+          "t-sql",
+          "pl/sql",
+          "sqlite",
+          "oracle sql",
+          "sql queries",
+          "joins"
+        ],
+        "related": [
+          "Databases"
+        ],
+        "resources": [
+          {
+            "title": "Intro to SQL",
+            "url": "https://www.kaggle.com/learn/intro-to-sql",
+            "type": "course"
+          },
+          {
+            "title": "Advanced SQL",
+            "url": "https://www.kaggle.com/learn/advanced-sql",
+            "type": "course"
+          }
+        ]
+      }
+    ],
+    "project_expectations": [
+      "A trained model served behind an API (e.g. FastAPI or Flask), containerised with Docker and runnable by anyone from the README.",
+      "A deep learning project (vision or NLP) that compares approaches and reports metrics, with clean, versioned code on GitHub."
+    ]
+  },
+  {
+    "role": "Backend Developer",
+    "family": "web",
+    "aliases": [
+      "backend engineer",
+      "back-end developer",
+      "back end developer",
+      "server side developer",
+      "api developer",
+      "node.js developer",
+      "python developer",
+      "java developer"
+    ],
+    "summary": "Builds the server-side logic, APIs and databases that power web and mobile applications.",
+    "required_skills": [
+      {
+        "name": "Backend Framework",
+        "importance": 3,
+        "category": "backend",
+        "aliases": [
+          "node.js",
+          "nodejs",
+          "node",
+          "express",
+          "express.js",
+          "expressjs",
+          "django",
+          "flask",
+          "fastapi",
+          "spring boot",
+          "spring",
+          "laravel",
+          "asp.net",
+          ".net core"
+        ],
+        "related": [
+          "Python",
+          "JavaScript"
+        ],
+        "resources": [
+          {
+            "title": "Learn Node.js",
+            "url": "https://nodejs.org/learn",
+            "type": "docs"
+          },
+          {
+            "title": "FastAPI Tutorial - User Guide",
+            "url": "https://fastapi.tiangolo.com/tutorial/",
+            "type": "docs"
+          },
+          {
+            "title": "Back End Development and APIs (freeCodeCamp)",
+            "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "REST APIs",
+        "importance": 3,
+        "category": "backend",
+        "aliases": [
+          "rest",
+          "rest api",
+          "restful",
+          "restful apis",
+          "api development",
+          "api design",
+          "postman",
+          "swagger",
+          "openapi",
+          "fastapi",
+          "flask",
+          "http apis",
+          "fetch api",
+          "axios"
+        ],
+        "related": [
+          "Backend Framework",
+          "JavaScript",
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "FastAPI Tutorial - User Guide",
+            "url": "https://fastapi.tiangolo.com/tutorial/",
+            "type": "docs"
+          },
+          {
+            "title": "An overview of HTTP (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "SQL",
+        "importance": 3,
+        "category": "databases",
+        "aliases": [
+          "mysql",
+          "postgresql",
+          "postgres",
+          "sql server",
+          "ms sql",
+          "t-sql",
+          "pl/sql",
+          "sqlite",
+          "oracle sql",
+          "sql queries",
+          "joins"
+        ],
+        "related": [
+          "Databases"
+        ],
+        "resources": [
+          {
+            "title": "Intro to SQL",
+            "url": "https://www.kaggle.com/learn/intro-to-sql",
+            "type": "course"
+          },
+          {
+            "title": "Advanced SQL",
+            "url": "https://www.kaggle.com/learn/advanced-sql",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "importance": 3,
+        "category": "tools",
+        "aliases": [
+          "github",
+          "gitlab",
+          "bitbucket",
+          "version control"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Pro Git book",
+            "url": "https://git-scm.com/book/en/v2",
+            "type": "book"
+          }
+        ]
+      },
+      {
+        "name": "Databases",
+        "importance": 2,
+        "category": "databases",
+        "aliases": [
+          "dbms",
+          "database design",
+          "database management",
+          "mongodb",
+          "nosql",
+          "redis",
+          "normalization",
+          "er diagrams",
+          "firebase",
+          "mongoose"
+        ],
+        "related": [
+          "SQL"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Data Base Management System (IIT Kharagpur)",
+            "url": "https://nptel.ac.in/courses/106105175",
+            "type": "course"
+          },
+          {
+            "title": "PostgreSQL Tutorial",
+            "url": "https://www.postgresql.org/docs/current/tutorial.html",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Data Structures & Algorithms",
+        "importance": 2,
+        "category": "programming",
+        "aliases": [
+          "dsa",
+          "data structures",
+          "algorithms",
+          "problem solving",
+          "competitive programming",
+          "leetcode",
+          "codechef",
+          "codeforces",
+          "hackerrank"
+        ],
+        "related": [
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Programming, Data Structures and Algorithms using Python",
+            "url": "https://nptel.ac.in/courses/106106145",
+            "type": "course"
+          },
+          {
+            "title": "Algorithms (Khan Academy)",
+            "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Authentication",
+        "importance": 2,
+        "category": "backend",
+        "aliases": [
+          "jwt",
+          "oauth",
+          "oauth2",
+          "session management",
+          "login system",
+          "bcrypt",
+          "auth",
+          "authorization"
+        ],
+        "related": [
+          "REST APIs",
+          "Web Security"
+        ],
+        "resources": [
+          {
+            "title": "FastAPI Security tutorial",
+            "url": "https://fastapi.tiangolo.com/tutorial/security/",
+            "type": "docs"
+          },
+          {
+            "title": "HTTP authentication (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Authentication",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Docker",
+        "importance": 1,
+        "category": "devops",
+        "aliases": [
+          "containers",
+          "containerization",
+          "docker compose",
+          "dockerfile",
+          "kubernetes",
+          "k8s"
+        ],
+        "related": [
+          "Linux"
+        ],
+        "resources": [
+          {
+            "title": "Get started with Docker",
+            "url": "https://docs.docker.com/get-started/",
+            "type": "docs"
+          }
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "Linux",
+        "importance": 1,
+        "category": "systems",
+        "aliases": [
+          "ubuntu",
+          "kali linux",
+          "unix",
+          "bash",
+          "shell scripting",
+          "command line",
+          "terminal"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "OverTheWire: Bandit",
+            "url": "https://overthewire.org/wargames/bandit/",
+            "type": "practice"
+          },
+          {
+            "title": "TryHackMe: Linux Fundamentals Part 1",
+            "url": "https://tryhackme.com/room/linuxfundamentalspart1",
+            "type": "practice"
+          }
+        ]
+      },
+      {
+        "name": "Cloud Basics",
+        "importance": 1,
+        "category": "devops",
+        "aliases": [
+          "aws",
+          "azure",
+          "gcp",
+          "google cloud",
+          "cloud computing",
+          "ec2",
+          "s3",
+          "aws cloud practitioner",
+          "az-900"
+        ],
+        "related": [
+          "Linux",
+          "Docker"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Cloud Computing (IIT Kharagpur)",
+            "url": "https://nptel.ac.in/courses/106105167",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Testing",
+        "importance": 1,
+        "category": "tools",
+        "aliases": [
+          "unit testing",
+          "pytest",
+          "jest",
+          "junit",
+          "selenium",
+          "cypress",
+          "test cases",
+          "tdd",
+          "react testing library"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Get started with pytest",
+            "url": "https://docs.pytest.org/en/stable/getting-started.html",
+            "type": "docs"
+          },
+          {
+            "title": "Getting Started (Jest)",
+            "url": "https://jestjs.io/docs/getting-started",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Python",
+        "importance": 1,
+        "category": "programming",
+        "aliases": [
+          "python3",
+          "python 3",
+          "py",
+          "core python"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Python",
+            "url": "https://www.kaggle.com/learn/python",
+            "type": "course"
+          },
+          {
+            "title": "The Python Tutorial",
+            "url": "https://docs.python.org/3/tutorial/",
+            "type": "docs"
+          }
+        ]
+      }
+    ],
+    "project_expectations": [
+      "A REST API with a real database, authentication, input validation and clear API docs, deployed or runnable with Docker.",
+      "A project showing database design (schema, relationships, indexes) beyond a single-table CRUD app, with tests."
+    ]
+  },
+  {
+    "role": "Frontend Developer",
+    "family": "web",
+    "aliases": [
+      "front-end developer",
+      "front end developer",
+      "frontend engineer",
+      "ui developer",
+      "react developer",
+      "web designer"
+    ],
+    "summary": "Builds the screens users see and interact with, turning designs into fast, responsive web interfaces.",
+    "required_skills": [
+      {
+        "name": "HTML",
+        "importance": 3,
+        "category": "frontend",
+        "aliases": [
+          "html5",
+          "semantic html"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "HTML (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+            "type": "docs"
+          },
+          {
+            "title": "Responsive Web Design (freeCodeCamp)",
+            "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "CSS",
+        "importance": 3,
+        "category": "frontend",
+        "aliases": [
+          "css3",
+          "flexbox",
+          "css grid",
+          "tailwind",
+          "tailwindcss",
+          "tailwind css",
+          "bootstrap",
+          "sass",
+          "scss"
+        ],
+        "related": [
+          "HTML"
+        ],
+        "resources": [
+          {
+            "title": "CSS (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "importance": 3,
+        "category": "frontend",
+        "aliases": [
+          "js",
+          "es6",
+          "ecmascript",
+          "vanilla js",
+          "dom manipulation"
+        ],
+        "related": [
+          "TypeScript"
+        ],
+        "resources": [
+          {
+            "title": "JavaScript Guide (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+            "type": "docs"
+          },
+          {
+            "title": "JavaScript Algorithms and Data Structures (freeCodeCamp)",
+            "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "React",
+        "importance": 3,
+        "category": "frontend",
+        "aliases": [
+          "react.js",
+          "reactjs",
+          "react js",
+          "next.js",
+          "nextjs",
+          "redux",
+          "react hooks"
+        ],
+        "related": [
+          "JavaScript"
+        ],
+        "resources": [
+          {
+            "title": "Learn React (react.dev)",
+            "url": "https://react.dev/learn",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "importance": 3,
+        "category": "tools",
+        "aliases": [
+          "github",
+          "gitlab",
+          "bitbucket",
+          "version control"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Pro Git book",
+            "url": "https://git-scm.com/book/en/v2",
+            "type": "book"
+          }
+        ]
+      },
+      {
+        "name": "Responsive Design",
+        "importance": 2,
+        "category": "frontend",
+        "aliases": [
+          "responsive web design",
+          "mobile-first",
+          "mobile first",
+          "media queries",
+          "cross-browser compatibility"
+        ],
+        "related": [
+          "CSS"
+        ],
+        "resources": [
+          {
+            "title": "Responsive design (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "REST APIs",
+        "importance": 2,
+        "category": "backend",
+        "aliases": [
+          "rest",
+          "rest api",
+          "restful",
+          "restful apis",
+          "api development",
+          "api design",
+          "postman",
+          "swagger",
+          "openapi",
+          "fastapi",
+          "flask",
+          "http apis",
+          "fetch api",
+          "axios"
+        ],
+        "related": [
+          "Backend Framework",
+          "JavaScript",
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "FastAPI Tutorial - User Guide",
+            "url": "https://fastapi.tiangolo.com/tutorial/",
+            "type": "docs"
+          },
+          {
+            "title": "An overview of HTTP (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "importance": 1,
+        "category": "frontend",
+        "aliases": [
+          "ts"
+        ],
+        "related": [
+          "JavaScript"
+        ],
+        "resources": [
+          {
+            "title": "The TypeScript Handbook",
+            "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+            "type": "docs"
+          }
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "Accessibility",
+        "importance": 1,
+        "category": "frontend",
+        "aliases": [
+          "a11y",
+          "wcag",
+          "aria",
+          "web accessibility"
+        ],
+        "related": [
+          "HTML"
+        ],
+        "resources": [
+          {
+            "title": "Accessibility (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Testing",
+        "importance": 1,
+        "category": "tools",
+        "aliases": [
+          "unit testing",
+          "pytest",
+          "jest",
+          "junit",
+          "selenium",
+          "cypress",
+          "test cases",
+          "tdd",
+          "react testing library"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Get started with pytest",
+            "url": "https://docs.pytest.org/en/stable/getting-started.html",
+            "type": "docs"
+          },
+          {
+            "title": "Getting Started (Jest)",
+            "url": "https://jestjs.io/docs/getting-started",
+            "type": "docs"
+          }
+        ]
+      }
+    ],
+    "project_expectations": [
+      "A deployed, responsive React app that fetches data from a public API, with loading and error states handled.",
+      "A pixel-accurate clone of a real website or a polished portfolio site that works well on mobile."
+    ]
+  },
+  {
+    "role": "Full-Stack Developer",
+    "family": "web",
+    "aliases": [
+      "full stack developer",
+      "fullstack developer",
+      "mern stack developer",
+      "mern developer",
+      "mean stack developer",
+      "web developer",
+      "software developer"
+    ],
+    "summary": "Builds complete web applications end to end, from the user interface to the server and database.",
+    "required_skills": [
+      {
+        "name": "JavaScript",
+        "importance": 3,
+        "category": "frontend",
+        "aliases": [
+          "js",
+          "es6",
+          "ecmascript",
+          "vanilla js",
+          "dom manipulation"
+        ],
+        "related": [
+          "TypeScript"
+        ],
+        "resources": [
+          {
+            "title": "JavaScript Guide (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+            "type": "docs"
+          },
+          {
+            "title": "JavaScript Algorithms and Data Structures (freeCodeCamp)",
+            "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "React",
+        "importance": 3,
+        "category": "frontend",
+        "aliases": [
+          "react.js",
+          "reactjs",
+          "react js",
+          "next.js",
+          "nextjs",
+          "redux",
+          "react hooks"
+        ],
+        "related": [
+          "JavaScript"
+        ],
+        "resources": [
+          {
+            "title": "Learn React (react.dev)",
+            "url": "https://react.dev/learn",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Backend Framework",
+        "importance": 3,
+        "category": "backend",
+        "aliases": [
+          "node.js",
+          "nodejs",
+          "node",
+          "express",
+          "express.js",
+          "expressjs",
+          "django",
+          "flask",
+          "fastapi",
+          "spring boot",
+          "spring",
+          "laravel",
+          "asp.net",
+          ".net core"
+        ],
+        "related": [
+          "Python",
+          "JavaScript"
+        ],
+        "resources": [
+          {
+            "title": "Learn Node.js",
+            "url": "https://nodejs.org/learn",
+            "type": "docs"
+          },
+          {
+            "title": "FastAPI Tutorial - User Guide",
+            "url": "https://fastapi.tiangolo.com/tutorial/",
+            "type": "docs"
+          },
+          {
+            "title": "Back End Development and APIs (freeCodeCamp)",
+            "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "REST APIs",
+        "importance": 3,
+        "category": "backend",
+        "aliases": [
+          "rest",
+          "rest api",
+          "restful",
+          "restful apis",
+          "api development",
+          "api design",
+          "postman",
+          "swagger",
+          "openapi",
+          "fastapi",
+          "flask",
+          "http apis",
+          "fetch api",
+          "axios"
+        ],
+        "related": [
+          "Backend Framework",
+          "JavaScript",
+          "Python"
+        ],
+        "resources": [
+          {
+            "title": "FastAPI Tutorial - User Guide",
+            "url": "https://fastapi.tiangolo.com/tutorial/",
+            "type": "docs"
+          },
+          {
+            "title": "An overview of HTTP (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "importance": 3,
+        "category": "tools",
+        "aliases": [
+          "github",
+          "gitlab",
+          "bitbucket",
+          "version control"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Pro Git book",
+            "url": "https://git-scm.com/book/en/v2",
+            "type": "book"
+          }
+        ]
+      },
+      {
+        "name": "Databases",
+        "importance": 2,
+        "category": "databases",
+        "aliases": [
+          "dbms",
+          "database design",
+          "database management",
+          "mongodb",
+          "nosql",
+          "redis",
+          "normalization",
+          "er diagrams",
+          "firebase",
+          "mongoose"
+        ],
+        "related": [
+          "SQL"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Data Base Management System (IIT Kharagpur)",
+            "url": "https://nptel.ac.in/courses/106105175",
+            "type": "course"
+          },
+          {
+            "title": "PostgreSQL Tutorial",
+            "url": "https://www.postgresql.org/docs/current/tutorial.html",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "HTML",
+        "importance": 2,
+        "category": "frontend",
+        "aliases": [
+          "html5",
+          "semantic html"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "HTML (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+            "type": "docs"
+          },
+          {
+            "title": "Responsive Web Design (freeCodeCamp)",
+            "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "CSS",
+        "importance": 2,
+        "category": "frontend",
+        "aliases": [
+          "css3",
+          "flexbox",
+          "css grid",
+          "tailwind",
+          "tailwindcss",
+          "tailwind css",
+          "bootstrap",
+          "sass",
+          "scss"
+        ],
+        "related": [
+          "HTML"
+        ],
+        "resources": [
+          {
+            "title": "CSS (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            "type": "docs"
+          }
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "SQL",
+        "importance": 1,
+        "category": "databases",
+        "aliases": [
+          "mysql",
+          "postgresql",
+          "postgres",
+          "sql server",
+          "ms sql",
+          "t-sql",
+          "pl/sql",
+          "sqlite",
+          "oracle sql",
+          "sql queries",
+          "joins"
+        ],
+        "related": [
+          "Databases"
+        ],
+        "resources": [
+          {
+            "title": "Intro to SQL",
+            "url": "https://www.kaggle.com/learn/intro-to-sql",
+            "type": "course"
+          },
+          {
+            "title": "Advanced SQL",
+            "url": "https://www.kaggle.com/learn/advanced-sql",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "importance": 1,
+        "category": "frontend",
+        "aliases": [
+          "ts"
+        ],
+        "related": [
+          "JavaScript"
+        ],
+        "resources": [
+          {
+            "title": "The TypeScript Handbook",
+            "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Authentication",
+        "importance": 1,
+        "category": "backend",
+        "aliases": [
+          "jwt",
+          "oauth",
+          "oauth2",
+          "session management",
+          "login system",
+          "bcrypt",
+          "auth",
+          "authorization"
+        ],
+        "related": [
+          "REST APIs",
+          "Web Security"
+        ],
+        "resources": [
+          {
+            "title": "FastAPI Security tutorial",
+            "url": "https://fastapi.tiangolo.com/tutorial/security/",
+            "type": "docs"
+          },
+          {
+            "title": "HTTP authentication (MDN)",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Authentication",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Docker",
+        "importance": 1,
+        "category": "devops",
+        "aliases": [
+          "containers",
+          "containerization",
+          "docker compose",
+          "dockerfile",
+          "kubernetes",
+          "k8s"
+        ],
+        "related": [
+          "Linux"
+        ],
+        "resources": [
+          {
+            "title": "Get started with Docker",
+            "url": "https://docs.docker.com/get-started/",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Cloud Basics",
+        "importance": 1,
+        "category": "devops",
+        "aliases": [
+          "aws",
+          "azure",
+          "gcp",
+          "google cloud",
+          "cloud computing",
+          "ec2",
+          "s3",
+          "aws cloud practitioner",
+          "az-900"
+        ],
+        "related": [
+          "Linux",
+          "Docker"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Cloud Computing (IIT Kharagpur)",
+            "url": "https://nptel.ac.in/courses/106105167",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Testing",
+        "importance": 1,
+        "category": "tools",
+        "aliases": [
+          "unit testing",
+          "pytest",
+          "jest",
+          "junit",
+          "selenium",
+          "cypress",
+          "test cases",
+          "tdd",
+          "react testing library"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Get started with pytest",
+            "url": "https://docs.pytest.org/en/stable/getting-started.html",
+            "type": "docs"
+          },
+          {
+            "title": "Getting Started (Jest)",
+            "url": "https://jestjs.io/docs/getting-started",
+            "type": "docs"
+          }
+        ]
+      }
+    ],
+    "project_expectations": [
+      "A deployed full-stack app (e.g. MERN) with user login, a database, and create/read/update/delete features used by real users.",
+      "A second project integrating a third-party API or payments, with a clean README and live demo link."
+    ]
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "family": "security",
+    "aliases": [
+      "cyber security analyst",
+      "security analyst",
+      "soc analyst",
+      "information security analyst",
+      "infosec analyst",
+      "vapt analyst",
+      "ethical hacker"
+    ],
+    "summary": "Monitors systems for threats, investigates security alerts and helps fix vulnerabilities before attackers use them.",
+    "required_skills": [
+      {
+        "name": "Networking",
+        "importance": 3,
+        "category": "security",
+        "aliases": [
+          "computer networks",
+          "tcp/ip",
+          "osi model",
+          "dns",
+          "subnetting",
+          "ccna",
+          "network fundamentals",
+          "routing and switching"
+        ],
+        "related": [
+          "Linux"
+        ],
+        "resources": [
+          {
+            "title": "TryHackMe: Pre Security path",
+            "url": "https://tryhackme.com/path/outline/presecurity",
+            "type": "practice"
+          },
+          {
+            "title": "Computers and the Internet (Khan Academy)",
+            "url": "https://www.khanacademy.org/computing/computers-and-internet",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Linux",
+        "importance": 3,
+        "category": "systems",
+        "aliases": [
+          "ubuntu",
+          "kali linux",
+          "unix",
+          "bash",
+          "shell scripting",
+          "command line",
+          "terminal"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "OverTheWire: Bandit",
+            "url": "https://overthewire.org/wargames/bandit/",
+            "type": "practice"
+          },
+          {
+            "title": "TryHackMe: Linux Fundamentals Part 1",
+            "url": "https://tryhackme.com/room/linuxfundamentalspart1",
+            "type": "practice"
+          }
+        ]
+      },
+      {
+        "name": "Security Fundamentals",
+        "importance": 3,
+        "category": "security",
+        "aliases": [
+          "information security",
+          "cyber security",
+          "cybersecurity",
+          "cia triad",
+          "cryptography",
+          "encryption",
+          "risk management",
+          "comptia security+",
+          "security+"
+        ],
+        "related": [
+          "Networking"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Ethical Hacking (IIT Kharagpur)",
+            "url": "https://nptel.ac.in/courses/106105217",
+            "type": "course"
+          },
+          {
+            "title": "TryHackMe: Cyber Security 101 path",
+            "url": "https://tryhackme.com/path/outline/cybersecurity101",
+            "type": "practice"
+          }
+        ]
+      },
+      {
+        "name": "Web Security",
+        "importance": 3,
+        "category": "security",
+        "aliases": [
+          "owasp",
+          "owasp top 10",
+          "web application security",
+          "burp suite",
+          "sql injection",
+          "xss",
+          "csrf",
+          "vapt",
+          "penetration testing",
+          "bug bounty"
+        ],
+        "related": [
+          "Security Fundamentals",
+          "Networking"
+        ],
+        "resources": [
+          {
+            "title": "OWASP Top 10",
+            "url": "https://owasp.org/projects/top-ten",
+            "type": "docs"
+          },
+          {
+            "title": "Web Security Academy (PortSwigger)",
+            "url": "https://portswigger.net/web-security",
+            "type": "practice"
+          }
+        ]
+      },
+      {
+        "name": "Security Operations",
+        "importance": 2,
+        "category": "security",
+        "aliases": [
+          "soc",
+          "siem",
+          "splunk",
+          "qradar",
+          "elk stack",
+          "incident response",
+          "log analysis",
+          "threat detection",
+          "threat intelligence"
+        ],
+        "related": [
+          "Security Fundamentals",
+          "Networking"
+        ],
+        "resources": [
+          {
+            "title": "TryHackMe: SOC Level 1 path",
+            "url": "https://tryhackme.com/path/outline/soclevel1",
+            "type": "practice"
+          }
+        ]
+      },
+      {
+        "name": "Security Tools",
+        "importance": 2,
+        "category": "security",
+        "aliases": [
+          "nmap",
+          "wireshark",
+          "metasploit",
+          "nessus",
+          "burp suite",
+          "kali linux tools",
+          "vulnerability scanning"
+        ],
+        "related": [
+          "Linux",
+          "Networking"
+        ],
+        "resources": [
+          {
+            "title": "TryHackMe: Nmap room",
+            "url": "https://tryhackme.com/room/furthernmap",
+            "type": "practice"
+          },
+          {
+            "title": "Wireshark User's Guide",
+            "url": "https://www.wireshark.org/docs/wsug_html_chunked/",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Python",
+        "importance": 2,
+        "category": "programming",
+        "aliases": [
+          "python3",
+          "python 3",
+          "py",
+          "core python"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Python",
+            "url": "https://www.kaggle.com/learn/python",
+            "type": "course"
+          },
+          {
+            "title": "The Python Tutorial",
+            "url": "https://docs.python.org/3/tutorial/",
+            "type": "docs"
+          }
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "Cloud Basics",
+        "importance": 1,
+        "category": "devops",
+        "aliases": [
+          "aws",
+          "azure",
+          "gcp",
+          "google cloud",
+          "cloud computing",
+          "ec2",
+          "s3",
+          "aws cloud practitioner",
+          "az-900"
+        ],
+        "related": [
+          "Linux",
+          "Docker"
+        ],
+        "resources": [
+          {
+            "title": "NPTEL: Cloud Computing (IIT Kharagpur)",
+            "url": "https://nptel.ac.in/courses/106105167",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "SQL",
+        "importance": 1,
+        "category": "databases",
+        "aliases": [
+          "mysql",
+          "postgresql",
+          "postgres",
+          "sql server",
+          "ms sql",
+          "t-sql",
+          "pl/sql",
+          "sqlite",
+          "oracle sql",
+          "sql queries",
+          "joins"
+        ],
+        "related": [
+          "Databases"
+        ],
+        "resources": [
+          {
+            "title": "Intro to SQL",
+            "url": "https://www.kaggle.com/learn/intro-to-sql",
+            "type": "course"
+          },
+          {
+            "title": "Advanced SQL",
+            "url": "https://www.kaggle.com/learn/advanced-sql",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "importance": 1,
+        "category": "tools",
+        "aliases": [
+          "github",
+          "gitlab",
+          "bitbucket",
+          "version control"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Pro Git book",
+            "url": "https://git-scm.com/book/en/v2",
+            "type": "book"
+          }
+        ]
+      }
+    ],
+    "project_expectations": [
+      "Write-ups of completed labs or CTFs (TryHackMe, OverTheWire, PortSwigger) showing your methodology, not just the flags.",
+      "A home lab or tool project, e.g. a log-analysis script, a network scan report, or a vulnerability assessment of a test app."
+    ]
+  },
+  {
+    "role": "Business Analyst",
+    "family": "business",
+    "aliases": [
+      "ba",
+      "business analytics",
+      "it business analyst",
+      "junior business analyst",
+      "product analyst",
+      "operations analyst"
+    ],
+    "summary": "Bridges business teams and tech teams by gathering requirements, analysing data and recommending improvements.",
+    "required_skills": [
+      {
+        "name": "Excel",
+        "importance": 3,
+        "category": "tools",
+        "aliases": [
+          "ms excel",
+          "microsoft excel",
+          "advanced excel",
+          "google sheets",
+          "spreadsheets",
+          "vlookup",
+          "xlookup",
+          "pivot tables",
+          "excel formulas"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Excel help & learning (Microsoft)",
+            "url": "https://support.microsoft.com/en-us/excel/",
+            "type": "course"
+          },
+          {
+            "title": "Excel: Foundations (GCF LearnFree)",
+            "url": "https://www.learnfree.org/series/excel-foundations",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Requirements Analysis",
+        "importance": 3,
+        "category": "business",
+        "aliases": [
+          "requirements gathering",
+          "requirement analysis",
+          "brd",
+          "frd",
+          "srs",
+          "user stories",
+          "use cases",
+          "stakeholder management",
+          "gap analysis"
+        ],
+        "related": [
+          "Agile"
+        ],
+        "resources": [
+          {
+            "title": "User stories with examples (Atlassian)",
+            "url": "https://www.atlassian.com/agile/project-management/user-stories",
+            "type": "article"
+          }
+        ]
+      },
+      {
+        "name": "Data Visualization",
+        "importance": 3,
+        "category": "analytics",
+        "aliases": [
+          "power bi",
+          "tableau",
+          "matplotlib",
+          "seaborn",
+          "plotly",
+          "dashboards",
+          "looker studio",
+          "google data studio",
+          "data viz",
+          "charts"
+        ],
+        "related": [
+          "Excel"
+        ],
+        "resources": [
+          {
+            "title": "Data Visualization",
+            "url": "https://www.kaggle.com/learn/data-visualization",
+            "type": "course"
+          },
+          {
+            "title": "Get started with Microsoft data analytics: Power BI (Microsoft Learn)",
+            "url": "https://learn.microsoft.com/en-us/training/paths/data-analytics-microsoft/",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "SQL",
+        "importance": 2,
+        "category": "databases",
+        "aliases": [
+          "mysql",
+          "postgresql",
+          "postgres",
+          "sql server",
+          "ms sql",
+          "t-sql",
+          "pl/sql",
+          "sqlite",
+          "oracle sql",
+          "sql queries",
+          "joins"
+        ],
+        "related": [
+          "Databases"
+        ],
+        "resources": [
+          {
+            "title": "Intro to SQL",
+            "url": "https://www.kaggle.com/learn/intro-to-sql",
+            "type": "course"
+          },
+          {
+            "title": "Advanced SQL",
+            "url": "https://www.kaggle.com/learn/advanced-sql",
+            "type": "course"
+          }
+        ]
+      },
+      {
+        "name": "Process Modelling",
+        "importance": 2,
+        "category": "business",
+        "aliases": [
+          "process modeling",
+          "process mapping",
+          "bpmn",
+          "flowcharts",
+          "uml",
+          "visio",
+          "lucidchart",
+          "swimlane diagrams",
+          "draw.io"
+        ],
+        "related": [
+          "Requirements Analysis"
+        ],
+        "resources": [
+          {
+            "title": "BPM workflow and BPMN guide (Lucid)",
+            "url": "https://lucid.co/diagram/bpmn/bpm-tutorial",
+            "type": "article"
+          }
+        ]
+      },
+      {
+        "name": "Agile",
+        "importance": 2,
+        "category": "business",
+        "aliases": [
+          "scrum",
+          "kanban",
+          "jira",
+          "sprint planning",
+          "agile methodology"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "The Scrum Guide",
+            "url": "https://scrumguides.org/scrum-guide.html",
+            "type": "docs"
+          },
+          {
+            "title": "Agile guide (Atlassian)",
+            "url": "https://www.atlassian.com/agile",
+            "type": "article"
+          }
+        ]
+      },
+      {
+        "name": "Statistics",
+        "importance": 2,
+        "category": "math",
+        "aliases": [
+          "descriptive statistics",
+          "inferential statistics",
+          "probability",
+          "hypothesis testing",
+          "a/b testing",
+          "regression analysis",
+          "statistical analysis"
+        ],
+        "related": [
+          "Excel"
+        ],
+        "resources": [
+          {
+            "title": "Statistics and probability (Khan Academy)",
+            "url": "https://www.khanacademy.org/math/statistics-probability",
+            "type": "course"
+          }
+        ]
+      }
+    ],
+    "nice_to_have": [
+      {
+        "name": "Python",
+        "importance": 1,
+        "category": "programming",
+        "aliases": [
+          "python3",
+          "python 3",
+          "py",
+          "core python"
+        ],
+        "related": [],
+        "resources": [
+          {
+            "title": "Python",
+            "url": "https://www.kaggle.com/learn/python",
+            "type": "course"
+          },
+          {
+            "title": "The Python Tutorial",
+            "url": "https://docs.python.org/3/tutorial/",
+            "type": "docs"
+          }
+        ]
+      },
+      {
+        "name": "Communication",
+        "importance": 1,
+        "category": "soft skills",
+        "aliases": [
+          "presentation skills",
+          "data storytelling",
+          "storytelling",
+          "report writing",
+          "stakeholder communication",
+          "business communication"
+        ],
+        "related": [],
+        "resources": []
+      }
+    ],
+    "project_expectations": [
+      "A business case study: define the problem, document requirements (BRD or user stories), and map the as-is and to-be process.",
+      "A data-backed recommendation with a dashboard or Excel model, presented as a short slide deck or report."
+    ]
+  }
+]

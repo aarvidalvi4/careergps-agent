@@ -126,7 +126,7 @@ def test_mock_walks_tools_in_order() -> None:
     args = dict(called)
     assert args["lookup_role"] == {"role": "Data Analyst"}
     assert args["build_roadmap"] == {"weeks": 6}
-    assert args["draft_outreach"] == {"job_id": "job-7"}
+    assert args["draft_outreach"] == {"opening_id": "job-7"}
     assert "42" in reply.text and "Developing" in reply.text and "SQL" in reply.text
 
 
