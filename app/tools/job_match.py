@@ -27,16 +27,19 @@ def _skill_credit(skill: str, statuses: dict[str, str], present: set[str]) -> fl
     return 1.0 if any(term in present for term in skill_terms(skill)) else 0.0
 
 
-def match_jobs(profile: ResumeProfile, gaps: GapReport, req: RoleRequirements, limit: int = 5) -> list[JobMatch]:
+def opening_skill_credits(profile: ResumeProfile, gaps: GapReport, opening: Opening) -> dict[str, float]:
+    """Credit (1 / 0.5 / 0) the student earns for each of the opening's skills."""
     statuses = {j.skill: j.status for j in gaps.matched + gaps.partial + gaps.missing}
     listed, used = _profile_terms(profile)
-    present = listed | used
+    return {skill: _skill_credit(skill, statuses, listed | used) for skill in opening.skills}
 
+
+def match_jobs(profile: ResumeProfile, gaps: GapReport, req: RoleRequirements, limit: int = 5) -> list[JobMatch]:
     ranked: list[tuple[float, int, str, JobMatch]] = []
     for opening in load_openings():
         if not opening.skills:
             continue
-        credits = {skill: _skill_credit(skill, statuses, present) for skill in opening.skills}
+        credits = opening_skill_credits(profile, gaps, opening)
         percent = round(100 * sum(credits.values()) / len(credits))
         match = JobMatch(
             id=opening.id,
