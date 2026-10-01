@@ -58,9 +58,34 @@ Sample results: strong Data Analyst resume 95, medium 52, weak resume for ML Eng
 
 ## Impact
 
-- A readiness report, plan and outreach draft in under a minute, free for the student, in their own language.
-- The breakdown shows exactly which skills cost points, so the student knows what to learn first.
-- A college placement cell could run a whole batch through it in an afternoon.
+| | Without CareerGPS Agent | With it |
+|---|---|---|
+| Time to know where you stand | Days or weeks waiting for a placement officer or senior, if one is available | Under a minute per resume (a full live run takes seconds) |
+| Cost to the student | Paid counselling or nothing | ₹0, using free learning resources |
+| Language | Mostly English-only advice | Plan and summary in English, Hindi or Marathi |
+| Clarity | "Learn more skills" | Every point of the score explained, gaps ranked by importance, a dated week-by-week plan |
+| Next action | Unclear | Matched openings and a drafted message to send this week |
+
+For a college placement cell, the same API can assess a whole batch of resumes in an afternoon and show which skills the batch is weakest in.
+
+## Responsible AI
+
+- **The score is computed by code, not the LLM.** It is deterministic and every point is shown, so it can be checked and challenged.
+- **The LLM is told not to invent anything.** Resume extraction is limited to what the resume says, and skill judgements must quote evidence from the resume.
+- **No fake job claims.** Openings are labelled in the app and the API as sample data with fictional companies.
+- **Privacy.** Resumes are processed per request and the temporary file is deleted straight after. No accounts and nothing stored. API keys stay on the server and are never sent to the browser or committed to the repo.
+- **Graceful failure.** If the AI model fails or is rate-limited, the agent finishes with rule-based tools instead of showing a broken result. Scanned PDFs and non-PDF uploads are rejected with a clear message.
+- **Honest tone.** The final summary is instructed to be honest and encouraging, never generic, and to only use numbers the tools returned.
+
+## Tech stack
+
+- **Backend:** Python 3.12, FastAPI, Uvicorn, Pydantic v2
+- **Agent:** custom tool-calling loop (no framework) over a provider-neutral LLM wrapper
+- **LLM:** Groq (Qwen / gpt-oss, OpenAI-compatible API); Anthropic Claude also supported; mock mode for offline tests
+- **Resume parsing:** pdfplumber
+- **Frontend:** a single HTML/CSS/JS page with no build step, live updates via server-sent events
+- **Tests:** pytest (95 tests)
+- **Deployment:** Docker on Render
 
 ## Run it locally
 
@@ -110,6 +135,20 @@ LLM_PROVIDER=mock pytest -q      # PowerShell: $env:LLM_PROVIDER="mock"; pytest 
 - **Scanned PDFs are rejected** with a clear message; OCR is a next step.
 - **Privacy:** resumes are processed per request and the temporary file is deleted straight after. Nothing is stored.
 
+## Next steps
+
+- Connect a live jobs API in place of the sample openings
+- OCR for scanned resumes
+- Plug the agent into the CareerGPS platform so plans and progress are saved to the student's account
+- Batch reports for placement cells (skill gaps across a whole class)
+- More roles and more Indian languages
+
 ## Path to adoption
 
 CareerGPS is already live as a student platform (https://careergps-alpha.vercel.app) with accounts, a syllabus reader, skill checks and a mentor chat. This agent becomes its core engine, and is offered B2B to college placement cells to assess whole batches.
+
+## Team
+
+- Aarvi Dalvi
+- Aalia Khan
+- Ayesha Sultana
