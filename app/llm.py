@@ -101,13 +101,13 @@ class BaseLLM:
     ) -> LLMResponse:
         raise NotImplementedError
 
-    def complete_json(self, prompt: str, system: str | None = None) -> Any:
+    def complete_json(self, prompt: str, system: str | None = None, max_tokens: int = 2000) -> Any:
         """Ask for a JSON-only reply and parse it; retry once with a stricter nudge."""
         json_system = ((system + "\n\n") if system else "") + (
             "Respond with valid JSON only. No prose, no explanations, no markdown fences."
         )
         messages: list[Message] = [{"role": "user", "content": prompt}]
-        reply = self.chat(messages, system=json_system)
+        reply = self.chat(messages, system=json_system, max_tokens=max_tokens)
         try:
             return extract_json(reply.text)
         except LLMError:
@@ -120,7 +120,7 @@ class BaseLLM:
                 "starting with { or [ and nothing before or after it.",
             },
         ]
-        retry = self.chat(messages, system=json_system)
+        retry = self.chat(messages, system=json_system, max_tokens=max_tokens)
         return extract_json(retry.text)  # raises LLMError on second failure
 
     def _post(self, provider: str, url: str, headers: dict[str, str], body: dict[str, Any]) -> dict[str, Any]:
