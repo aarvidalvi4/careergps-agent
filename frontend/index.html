@@ -62,6 +62,12 @@ pre.out{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;background:var(
 a{color:var(--green)}
 footer{font-size:14px;color:var(--muted);margin-top:24px}
 .hidden{display:none}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin:18px 0 4px;padding-bottom:4px;position:sticky;top:0;background:var(--surface);z-index:5}
+.tab{background:var(--card);color:var(--ink);border:1px solid var(--line);padding:9px 14px;border-radius:999px;white-space:nowrap;font-weight:700}
+.tab[aria-selected=true]{background:var(--green);color:#fff;border-color:var(--green)}
+.tab:disabled{opacity:.4;cursor:not-allowed}
+.page{display:none}.page.active{display:block}
+.next{margin-top:14px}
 @media (max-width:560px){.row{grid-template-columns:1fr}}
 </style>
 </head>
@@ -70,6 +76,16 @@ footer{font-size:14px;color:var(--muted);margin-top:24px}
   <h1>How far are you from your first job?</h1>
   <p class="muted">Upload your resume and pick a role. The CareerGPS agent reads it, scores your readiness, builds a week-by-week plan, finds openings and drafts the message to send.</p>
 
+  <nav class="tabs" role="tablist" id="tabs">
+    <button class="tab" role="tab" data-page="start" aria-selected="true" type="button">1. Upload</button>
+    <button class="tab" role="tab" data-page="agent" type="button" disabled>2. Agent at work</button>
+    <button class="tab" role="tab" data-page="score" type="button" disabled>3. Your score</button>
+    <button class="tab" role="tab" data-page="plan" type="button" disabled>4. Your plan</button>
+    <button class="tab" role="tab" data-page="jobs" type="button" disabled>5. Openings</button>
+    <button class="tab" role="tab" data-page="message" type="button" disabled>6. Message</button>
+  </nav>
+
+  <div class="page active" id="page-start">
   <form class="card" id="form" novalidate>
     <label for="file">Your resume (PDF)</label>
     <div class="drop" id="drop" tabindex="0">Drop your PDF here or click to choose
@@ -86,14 +102,18 @@ footer{font-size:14px;color:var(--muted);margin-top:24px}
     <div style="margin-top:16px"><button id="go" type="submit">Check my readiness</button></div>
     <div id="err" class="err" role="alert"></div>
   </form>
+  </div>
 
-  <section class="card hidden" id="traceCard">
+  <div class="page" id="page-agent">
+  <section class="card" id="traceCard">
     <h2>What the agent is doing</h2>
     <ol class="trace" id="trace"></ol>
+    <button class="next hidden" id="toScore" type="button">See your score →</button>
   </section>
+  </div>
 
-  <div id="results" class="hidden">
-    <section class="card">
+  <div id="results">
+    <section class="card page" id="page-score">
       <h2>Where you stand</h2>
       <div class="sign"><div class="sign-in">
         <div><div class="role" id="sRole"></div><div class="band" id="sBand"></div></div>
@@ -110,10 +130,11 @@ footer{font-size:14px;color:var(--muted);margin-top:24px}
         <p class="muted" style="margin-top:8px">80 points for the role's required skills, weighted by how often employers ask for them (full credit if you have it, half if partly), plus 20 points for relevant projects. Computed in Python, so the same resume always gets the same score.</p>
         <div id="breakdown"></div>
       </details>
+      <button class="next" type="button" data-go="plan">See your plan →</button>
     </section>
-    <section class="card"><h2>Your plan</h2><div id="plan"></div></section>
-    <section class="card"><h2>Openings you fit best</h2><div id="matches"></div></section>
-    <section class="card"><h2>Message to send this week</h2><div id="outreach"></div></section>
+    <section class="card page" id="page-plan"><h2>Your plan</h2><div id="plan"></div><button class="next" type="button" data-go="jobs">See matching openings →</button></section>
+    <section class="card page" id="page-jobs"><h2>Openings you fit best</h2><div id="matches"></div><button class="next" type="button" data-go="message">See your message →</button></section>
+    <section class="card page" id="page-message"><h2>Message to send this week</h2><div id="outreach"></div></section>
   </div>
   <footer id="foot"></footer>
 </main>
@@ -121,6 +142,16 @@ footer{font-size:14px;color:var(--muted);margin-top:24px}
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let file = null;
+function show(page) {
+  document.querySelectorAll(".page").forEach(p => p.classList.toggle("active", p.id === "page-" + page));
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.page === page));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (page === "score") { $("fill").style.width = "0"; requestAnimationFrame(() => requestAnimationFrame(() => { $("fill").style.width = roadPos + "%"; })); }
+}
+let roadPos = 0;
+function enable(pages) { document.querySelectorAll(".tab").forEach(t => { if (pages.includes(t.dataset.page)) t.disabled = false; }); }
+document.querySelectorAll(".tab").forEach(t => t.onclick = () => !t.disabled && show(t.dataset.page));
+document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => show(b.dataset.go));
 
 fetch("/roles").then(r => r.json()).then(d => {
   $("role").innerHTML = d.roles.map(r => `<option>${esc(r)}</option>`).join("");
@@ -148,7 +179,9 @@ $("form").onsubmit = async e => {
   fd.append("weeks_available", weeks); fd.append("language", $("lang").value);
 
   $("go").disabled = true; $("go").textContent = "Agent is working…";
-  $("trace").innerHTML = ""; $("traceCard").classList.remove("hidden"); $("results").classList.add("hidden");
+  $("trace").innerHTML = ""; $("toScore").classList.add("hidden");
+  document.querySelectorAll(".tab").forEach(t => { if (!["start", "agent"].includes(t.dataset.page)) t.disabled = true; });
+  enable(["agent"]); show("agent");
   try {
     const res = await fetch("/analyze/stream", { method: "POST", body: fd });
     if (!res.ok) { const d = await res.json().catch(() => ({})); throw new Error(d.detail || `Request failed (${res.status})`); }
@@ -196,7 +229,8 @@ function addStep(s) {
 
 function render(r) {
   const g = r.gap_report;
-  $("results").classList.remove("hidden");
+  enable(["score", "plan", "jobs", "message"]);
+  $("toScore").classList.remove("hidden"); $("toScore").onclick = () => show("score");
   $("foot").textContent = (r.llm_mode === "mock" ? "Offline mode (rule-based, no AI model). " : `AI model: ${r.llm_mode}. `) +
     "Openings are sample data with fictional companies. Your resume is deleted right after analysis.";
   $("final").textContent = (r.final_message || "").replace(/\*\*/g, "");
@@ -219,8 +253,7 @@ function render(r) {
   const pos = n ? ((g.matched.length + 0.5 * g.partial.length) / n) * 100 : 0;
   const you = document.createElement("div"); you.className = "you"; you.textContent = "You"; you.style.left = `${pos}%`;
   road.appendChild(you);
-  $("fill").style.width = "0";
-  requestAnimationFrame(() => requestAnimationFrame(() => { $("fill").style.width = `${pos}%`; }));
+  roadPos = pos;
 
   $("breakdown").innerHTML = g.score_breakdown.map(l =>
     `<div class="line"><span>${esc(l.label)}</span><strong class="${l.points < l.max_points ? "lost" : ""}">${l.points}&nbsp;/&nbsp;${l.max_points}</strong></div>`).join("");
