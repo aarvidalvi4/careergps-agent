@@ -8,7 +8,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-from app.models import RoleRequirements
+from app.models import RoleRequirements, SkillReq
 
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
@@ -35,6 +35,23 @@ def norm(s: str) -> str:
     """Lowercase, '&' -> ' and ', keep only a-z 0-9 + # . /, collapse whitespace."""
     s = s.lower().replace("&", " and ")
     return " ".join(_DISALLOWED.sub(" ", s).split())
+
+
+@lru_cache(maxsize=1)
+def skill_catalog() -> dict[str, SkillReq]:
+    """Canonical skill name -> its definition (names, aliases, related are identical across roles)."""
+    catalog: dict[str, SkillReq] = {}
+    for role in load_roles():
+        for skill in role.required_skills + role.nice_to_have:
+            catalog.setdefault(skill.name, skill)
+    return catalog
+
+
+def skill_terms(name: str) -> list[str]:
+    """Normalised name + aliases for a canonical skill (just the name if it isn't in the catalog)."""
+    skill = skill_catalog().get(name)
+    terms = [name, *skill.aliases] if skill else [name]
+    return [norm(t) for t in terms]
 
 
 @lru_cache(maxsize=1)
