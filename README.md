@@ -5,6 +5,12 @@
 
 An AI agent that tells a student how far their resume is from their first job, and then acts on it: a readiness score with every point explained, a week-by-week plan, ranked openings and a message ready to send to a recruiter, in English, Hindi or Marathi.
 
+**Documents:** [Pitch deck (PDF)](docs/CareerGPS-Agent-Pitch.pdf) · [Project documentation (PDF)](docs/CareerGPS-Agent-Documentation.pdf)
+
+| The agent at work (live trace) | A week of the plan |
+|---|---|
+| ![Agent at work](docs/agent-at-work.jpg) | ![Plan](docs/plan.jpg) |
+
 ## The problem
 
 Students at tier-2 and tier-3 colleges in India usually have no placement mentor. They can't tell how far their resume is from a real job, which skills matter most for the role they want, or what to do this week. So they apply blindly, or pay for counselling they can't afford.
