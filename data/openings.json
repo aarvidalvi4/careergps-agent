@@ -1,0 +1,329 @@
+{
+  "_note": "Sample openings for demo purposes. Companies are fictional and any resemblance to real companies is coincidental; links point to example.com.",
+  "openings": [
+    {
+      "id": "op01",
+      "company": "Kisanlytics",
+      "role": "Data Analyst Intern",
+      "family": "data",
+      "location": "Pune",
+      "mode": "Hybrid",
+      "stipend": "₹15k-20k/mo",
+      "skills": [
+        "SQL",
+        "Excel",
+        "Data Visualization",
+        "Statistics"
+      ],
+      "link": "https://example.com/apply/op01"
+    },
+    {
+      "id": "op02",
+      "company": "PaisaPath Fintech",
+      "role": "Junior Data Analyst",
+      "family": "data",
+      "location": "Bengaluru",
+      "mode": "On-site",
+      "stipend": "₹4-5 LPA",
+      "skills": [
+        "SQL",
+        "Python",
+        "Pandas",
+        "Data Visualization",
+        "Data Cleaning"
+      ],
+      "link": "https://example.com/apply/op02"
+    },
+    {
+      "id": "op03",
+      "company": "MandiMitra",
+      "role": "MIS Analyst",
+      "family": "data",
+      "location": "Nagpur",
+      "mode": "On-site",
+      "stipend": "₹3-3.6 LPA",
+      "skills": [
+        "Excel",
+        "Data Visualization",
+        "Data Cleaning"
+      ],
+      "link": "https://example.com/apply/op03"
+    },
+    {
+      "id": "op04",
+      "company": "Swasthya Insights",
+      "role": "Data Science Intern",
+      "family": "data",
+      "location": "Remote",
+      "mode": "Remote",
+      "stipend": "₹20k-25k/mo",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "Statistics",
+        "Pandas"
+      ],
+      "link": "https://example.com/apply/op04"
+    },
+    {
+      "id": "op05",
+      "company": "KiranaKart",
+      "role": "Junior Data Scientist",
+      "family": "data",
+      "location": "Hyderabad",
+      "mode": "Hybrid",
+      "stipend": "₹6-8 LPA",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "SQL",
+        "Feature Engineering",
+        "Statistics"
+      ],
+      "link": "https://example.com/apply/op05"
+    },
+    {
+      "id": "op06",
+      "company": "AnnaData Analytics",
+      "role": "Data Analyst",
+      "family": "data",
+      "location": "Remote",
+      "mode": "Remote",
+      "stipend": "₹4-6 LPA",
+      "skills": [
+        "SQL",
+        "Python",
+        "Data Visualization",
+        "Statistics"
+      ],
+      "link": "https://example.com/apply/op06"
+    },
+    {
+      "id": "op07",
+      "company": "ShikshaGraph",
+      "role": "ML Engineer Intern",
+      "family": "ml",
+      "location": "Remote",
+      "mode": "Remote",
+      "stipend": "₹25k-30k/mo",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning",
+        "Git"
+      ],
+      "link": "https://example.com/apply/op07"
+    },
+    {
+      "id": "op08",
+      "company": "Vaani AI Labs",
+      "role": "Junior ML Engineer (NLP)",
+      "family": "ml",
+      "location": "Bengaluru",
+      "mode": "Hybrid",
+      "stipend": "₹8-10 LPA",
+      "skills": [
+        "Python",
+        "Deep Learning",
+        "NLP",
+        "REST APIs",
+        "Docker"
+      ],
+      "link": "https://example.com/apply/op08"
+    },
+    {
+      "id": "op09",
+      "company": "DrishtiVision",
+      "role": "Computer Vision Intern",
+      "family": "ml",
+      "location": "Chennai",
+      "mode": "On-site",
+      "stipend": "₹20k/mo",
+      "skills": [
+        "Python",
+        "Deep Learning",
+        "Computer Vision"
+      ],
+      "link": "https://example.com/apply/op09"
+    },
+    {
+      "id": "op10",
+      "company": "TiffinTrack",
+      "role": "Backend Developer Intern",
+      "family": "web",
+      "location": "Indore",
+      "mode": "On-site",
+      "stipend": "₹12k-15k/mo",
+      "skills": [
+        "Backend Framework",
+        "REST APIs",
+        "SQL",
+        "Git"
+      ],
+      "link": "https://example.com/apply/op10"
+    },
+    {
+      "id": "op11",
+      "company": "RailSetu Tech",
+      "role": "Junior Backend Engineer",
+      "family": "web",
+      "location": "Remote",
+      "mode": "Remote",
+      "stipend": "₹5-7 LPA",
+      "skills": [
+        "Backend Framework",
+        "Databases",
+        "REST APIs",
+        "Docker",
+        "Authentication"
+      ],
+      "link": "https://example.com/apply/op11"
+    },
+    {
+      "id": "op12",
+      "company": "RangoliUI Studio",
+      "role": "Frontend Developer Intern",
+      "family": "web",
+      "location": "Ahmedabad",
+      "mode": "Hybrid",
+      "stipend": "₹10k-15k/mo",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React"
+      ],
+      "link": "https://example.com/apply/op12"
+    },
+    {
+      "id": "op13",
+      "company": "Pixelwala Digital",
+      "role": "Junior Frontend Developer",
+      "family": "web",
+      "location": "Jaipur",
+      "mode": "On-site",
+      "stipend": "₹3.5-4.5 LPA",
+      "skills": [
+        "JavaScript",
+        "React",
+        "TypeScript",
+        "Responsive Design",
+        "Git"
+      ],
+      "link": "https://example.com/apply/op13"
+    },
+    {
+      "id": "op14",
+      "company": "GaonConnect",
+      "role": "Full-Stack Developer Intern",
+      "family": "web",
+      "location": "Remote",
+      "mode": "Remote",
+      "stipend": "₹15k-20k/mo",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Backend Framework",
+        "Databases"
+      ],
+      "link": "https://example.com/apply/op14"
+    },
+    {
+      "id": "op15",
+      "company": "DukaanDost",
+      "role": "Junior Full-Stack Developer",
+      "family": "web",
+      "location": "Pune",
+      "mode": "Hybrid",
+      "stipend": "₹5-6 LPA",
+      "skills": [
+        "React",
+        "Backend Framework",
+        "REST APIs",
+        "SQL",
+        "Git"
+      ],
+      "link": "https://example.com/apply/op15"
+    },
+    {
+      "id": "op16",
+      "company": "KavachSec",
+      "role": "SOC Analyst Trainee",
+      "family": "security",
+      "location": "Noida",
+      "mode": "On-site",
+      "stipend": "₹3.5-4.5 LPA",
+      "skills": [
+        "Networking",
+        "Security Operations",
+        "Linux",
+        "Security Fundamentals"
+      ],
+      "link": "https://example.com/apply/op16"
+    },
+    {
+      "id": "op17",
+      "company": "SurakshaNet",
+      "role": "Cybersecurity Intern",
+      "family": "security",
+      "location": "Remote",
+      "mode": "Remote",
+      "stipend": "₹10k-15k/mo",
+      "skills": [
+        "Web Security",
+        "Linux",
+        "Python",
+        "Security Tools"
+      ],
+      "link": "https://example.com/apply/op17"
+    },
+    {
+      "id": "op18",
+      "company": "Trinetra Cyber",
+      "role": "Junior VAPT Analyst",
+      "family": "security",
+      "location": "Kochi",
+      "mode": "On-site",
+      "stipend": "₹4-5 LPA",
+      "skills": [
+        "Web Security",
+        "Networking",
+        "Security Tools"
+      ],
+      "link": "https://example.com/apply/op18"
+    },
+    {
+      "id": "op19",
+      "company": "YatraNiti Travels",
+      "role": "Business Analyst Intern",
+      "family": "business",
+      "location": "Mumbai",
+      "mode": "Hybrid",
+      "stipend": "₹15k/mo",
+      "skills": [
+        "Excel",
+        "Requirements Analysis",
+        "Process Modelling",
+        "Communication"
+      ],
+      "link": "https://example.com/apply/op19"
+    },
+    {
+      "id": "op20",
+      "company": "BimaSaathi Insurtech",
+      "role": "Junior Business Analyst",
+      "family": "business",
+      "location": "Gurugram",
+      "mode": "On-site",
+      "stipend": "₹4.5-6 LPA",
+      "skills": [
+        "SQL",
+        "Excel",
+        "Data Visualization",
+        "Requirements Analysis",
+        "Agile"
+      ],
+      "link": "https://example.com/apply/op20"
+    }
+  ]
+}

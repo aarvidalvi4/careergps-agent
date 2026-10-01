@@ -120,6 +120,20 @@ class Roadmap(BaseModel):
 # --- Jobs and outreach ------------------------------------------------------
 
 
+class Opening(BaseModel):
+    """One entry of data/openings.json."""
+
+    id: str
+    company: str
+    role: str
+    family: str
+    location: str = ""
+    mode: str = ""
+    stipend: str | None = None
+    skills: list[str] = Field(default_factory=list)  # canonical skill names from roles.json
+    link: str = ""
+
+
 class JobMatch(BaseModel):
     id: str
     company: str

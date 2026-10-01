@@ -6,9 +6,7 @@ import json
 import re
 from functools import lru_cache
 from pathlib import Path
-from typing import Any
-
-from app.models import RoleRequirements, SkillReq
+from app.models import Opening, RoleRequirements, SkillReq
 
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
@@ -20,12 +18,14 @@ def load_roles() -> list[RoleRequirements]:
 
 
 @lru_cache(maxsize=1)
-def load_openings() -> list[dict[str, Any]]:
+def load_openings() -> list[Opening]:
     path = DATA_DIR / "openings.json"
     if not path.exists():
         return []
     with open(path, encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    items = data.get("openings", []) if isinstance(data, dict) else data
+    return [Opening.model_validate(item) for item in items]
 
 
 _DISALLOWED = re.compile(r"[^a-z0-9+#./]+")
