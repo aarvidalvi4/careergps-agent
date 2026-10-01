@@ -190,6 +190,7 @@ def test_anthropic_non_200_raises(monkeypatch: pytest.MonkeyPatch) -> None:
     with pytest.raises(LLMError) as exc:
         AnthropicLLM("key").chat([{"role": "user", "content": "hi"}])
     assert "401" in str(exc.value)
+    assert exc.value.status_code == 401
     assert "x" * 300 in str(exc.value) and "x" * 301 not in str(exc.value)
 
 

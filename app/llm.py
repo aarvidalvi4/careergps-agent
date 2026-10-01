@@ -31,7 +31,14 @@ Tool = dict[str, Any]
 
 
 class LLMError(Exception):
-    """Any failure talking to the LLM or interpreting its reply."""
+    """Any failure talking to the LLM or interpreting its reply.
+
+    status_code is set when the provider answered with a non-200 HTTP status.
+    """
+
+    def __init__(self, message: str, status_code: int | None = None) -> None:
+        super().__init__(message)
+        self.status_code = status_code
 
 
 @dataclass
@@ -76,7 +83,10 @@ def extract_json(text: str) -> Any:
 
 def _raise_for_status(provider: str, response: httpx.Response) -> None:
     if response.status_code != 200:
-        raise LLMError(f"{provider} API error {response.status_code}: {response.text[:300]}")
+        raise LLMError(
+            f"{provider} API error {response.status_code}: {response.text[:300]}",
+            status_code=response.status_code,
+        )
 
 
 class BaseLLM:
