@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -81,6 +82,10 @@ def extract_json(text: str) -> Any:
     raise LLMError(f"Could not parse JSON from model reply: {text[:300]!r}")
 
 
+def _sleep(seconds: float) -> None:
+    time.sleep(seconds)
+
+
 def _raise_for_status(provider: str, response: httpx.Response) -> None:
     if response.status_code != 200:
         raise LLMError(
@@ -124,10 +129,31 @@ class BaseLLM:
         return extract_json(retry.text)  # raises LLMError on second failure
 
     def _post(self, provider: str, url: str, headers: dict[str, str], body: dict[str, Any]) -> dict[str, Any]:
-        try:
-            response = httpx.post(url, headers=headers, json=body, timeout=TIMEOUT_SECONDS)
-        except httpx.HTTPError as exc:
-            raise LLMError(f"{provider} request failed: {exc}") from exc
+        # Retry rate limits / server errors with backoff, and Groq's "tool_use_failed"
+        # (the model wrote malformed tool arguments) a couple of times before giving up.
+        backoff = [2.0, 4.0, 8.0]
+        tool_retries = 2
+        attempt = 0
+        while True:
+            try:
+                response = httpx.post(url, headers=headers, json=body, timeout=TIMEOUT_SECONDS)
+            except httpx.HTTPError as exc:
+                raise LLMError(f"{provider} request failed: {exc}") from exc
+            status = response.status_code
+            if status == 400 and "tool_use_failed" in response.text and tool_retries > 0:
+                tool_retries -= 1
+                body = {**body, "temperature": 0}
+                continue
+            if (status == 429 or status >= 500) and attempt < len(backoff):
+                wait = backoff[attempt]
+                try:
+                    wait = min(float(response.headers.get("retry-after", wait)), 20.0)
+                except ValueError:
+                    pass
+                attempt += 1
+                _sleep(wait)
+                continue
+            break
         _raise_for_status(provider, response)
         try:
             return response.json()

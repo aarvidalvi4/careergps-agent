@@ -100,7 +100,7 @@ def test_unknown_tool_and_bad_opening_are_errors_not_crashes() -> None:
     assert result.final_message == "Done."
 
 
-def test_llm_error_stops_with_error_step() -> None:
+def test_llm_error_falls_back_to_rules() -> None:
     class Broken(BaseLLM):
         is_mock = True
 
@@ -108,8 +108,9 @@ def test_llm_error_stops_with_error_step() -> None:
             raise LLMError("provider down")
 
     result = run_agent(STRONG, "Data Analyst", llm=Broken())
-    assert [s.type for s in result.trace] == ["error"]
-    assert result.gap_report is None
+    assert result.trace[0].type == "error"
+    assert result.trace[-1].type == "final"
+    assert result.gap_report is not None and result.outreach is not None
 
 
 def test_step_limit() -> None:

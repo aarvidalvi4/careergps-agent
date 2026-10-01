@@ -1,10 +1,252 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CareerGPS Agent</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CareerGPS Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#0B6E4F;--yellow:#F6BE00;--ink:#142019;--surface:#F5F7F6;--card:#FFFFFF;--line:#D9E0DC;--partial:#B87700;--missing:#C23B3B;--muted:#55635B}
+@media (prefers-color-scheme: dark){:root{--ink:#E6EDE9;--surface:#0F1613;--card:#18211C;--line:#2B3832;--muted:#9AAAA1;--partial:#E0A030;--missing:#E46363}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--surface);color:var(--ink);font:16px/1.55 "Atkinson Hyperlegible",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0 0 8px}
+h1{font-size:clamp(28px,6vw,42px);font-weight:800}
+h2{font-size:22px;margin-top:8px}
+p{margin:0 0 12px}.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+label{display:block;font-weight:700;margin:12px 0 6px}
+select,input[type=number]{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.drop{border:2px dashed var(--line);border-radius:10px;padding:18px;text-align:center;cursor:pointer}
+.drop.over{border-color:var(--green)}
+button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:12px 18px;cursor:pointer;background:var(--green);color:#fff}
+button:disabled{opacity:.6;cursor:wait}
+button.ghost{background:transparent;color:var(--green);border:1px solid var(--green);padding:6px 12px}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.err{color:var(--missing);font-weight:700;margin-top:10px}
+.trace{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line)}
+.trace li{position:relative;padding:4px 0 8px 10px;overflow-wrap:anywhere}
+.trace li::before{content:"";position:absolute;left:-25px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--line)}
+.trace li.tool_result::before,.trace li.final::before{background:var(--green)}
+.trace li.error{color:var(--missing)}.trace li.error::before{background:var(--missing)}
+.trace li.thought{font-style:italic;color:var(--muted)}
+.trace li.tool_call::before{background:var(--yellow)}
+code{font-size:13px;background:var(--surface);padding:1px 5px;border-radius:4px}
+.sign{background:var(--green);color:#fff;border-radius:14px;padding:6px}
+.sign-in{border:3px solid #fff;border-radius:10px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.sign .role{font-family:"Bricolage Grotesque";font-size:clamp(22px,5vw,32px);font-weight:800}
+.sign .score{font-family:"Bricolage Grotesque";font-size:clamp(40px,10vw,64px);font-weight:800;line-height:1}
+.sign .score small{font-size:20px;opacity:.8}
+.band{margin-top:4px;opacity:.9}
+.road-wrap{overflow-x:auto;padding:30px 4px 4px}
+.road{position:relative;min-width:520px;height:12px;background:var(--line);border-radius:6px;margin:0 16px 70px}
+.fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--green);border-radius:6px;transition:width 1.2s ease}
+@media (prefers-reduced-motion: reduce){.fill{transition:none}}
+.stop{position:absolute;top:-4px;width:20px;height:20px;border-radius:50%;border:3px solid var(--card);transform:translateX(-50%)}
+.stop span{position:absolute;top:24px;left:50%;transform:translateX(-50%) rotate(35deg);transform-origin:left;white-space:nowrap;font-size:12px;color:var(--ink)}
+.you{position:absolute;top:-30px;transform:translateX(-50%);background:var(--yellow);color:#142019;font-weight:700;font-size:12px;padding:2px 8px;border-radius:6px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.message{border-left:4px solid var(--yellow);padding:8px 14px;background:var(--surface);border-radius:4px}
+details summary{cursor:pointer;font-weight:700}
+.line{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.lost{color:var(--missing)}
+.week{border-top:1px solid var(--line);padding:12px 0}
+.week h3{font-size:17px}
+.match{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:12px 0;align-items:center}
+.pct{font-family:"Bricolage Grotesque";font-size:30px;font-weight:800;color:var(--green)}
+pre.out{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;background:var(--surface);padding:14px;border-radius:8px}
+a{color:var(--green)}
+footer{font-size:14px;color:var(--muted);margin-top:24px}
+.hidden{display:none}
+@media (max-width:560px){.row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+<main>
+  <h1>How far are you from your first job?</h1>
+  <p class="muted">Upload your resume and pick a role. The CareerGPS agent reads it, scores your readiness, builds a week-by-week plan, finds openings and drafts the message to send.</p>
+
+  <form class="card" id="form" novalidate>
+    <label for="file">Your resume (PDF)</label>
+    <div class="drop" id="drop" tabindex="0">Drop your PDF here or click to choose
+      <input type="file" id="file" accept="application/pdf" hidden>
+    </div>
+    <div id="fname" class="muted" style="margin-top:6px"></div>
+    <div class="row">
+      <div><label for="role">Target role</label><select id="role"></select></div>
+      <div><label for="lang">Plan language</label>
+        <select id="lang"><option value="en">English</option><option value="hi">हिन्दी</option><option value="mr">मराठी</option></select></div>
+    </div>
+    <label for="weeks">Weeks available</label>
+    <input type="number" id="weeks" min="2" max="24" value="8">
+    <div style="margin-top:16px"><button id="go" type="submit">Check my readiness</button></div>
+    <div id="err" class="err" role="alert"></div>
+  </form>
+
+  <section class="card hidden" id="traceCard">
+    <h2>What the agent is doing</h2>
+    <ol class="trace" id="trace"></ol>
+  </section>
+
+  <div id="results" class="hidden">
+    <section class="card">
+      <h2>Where you stand</h2>
+      <div class="sign"><div class="sign-in">
+        <div><div class="role" id="sRole"></div><div class="band" id="sBand"></div></div>
+        <div class="score" id="sScore"></div>
+      </div></div>
+      <div class="road-wrap"><div class="road" id="road"><div class="fill" id="fill"></div></div></div>
+      <div class="legend">
+        <span><span class="dot" style="background:var(--green)"></span>Have it</span>
+        <span><span class="dot" style="background:var(--partial)"></span>Partly there</span>
+        <span><span class="dot" style="background:var(--missing)"></span>Still to learn</span>
+      </div>
+      <p class="message" id="final" style="margin-top:16px"></p>
+      <details style="margin-top:12px"><summary>See how your score was calculated</summary>
+        <p class="muted" style="margin-top:8px">80 points for the role's required skills, weighted by how often employers ask for them (full credit if you have it, half if partly), plus 20 points for relevant projects. Computed in Python, so the same resume always gets the same score.</p>
+        <div id="breakdown"></div>
+      </details>
+    </section>
+    <section class="card"><h2>Your plan</h2><div id="plan"></div></section>
+    <section class="card"><h2>Openings you fit best</h2><div id="matches"></div></section>
+    <section class="card"><h2>Message to send this week</h2><div id="outreach"></div></section>
+  </div>
+  <footer id="foot"></footer>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let file = null;
+
+fetch("/roles").then(r => r.json()).then(d => {
+  $("role").innerHTML = d.roles.map(r => `<option>${esc(r)}</option>`).join("");
+}).catch(() => { $("err").textContent = "Couldn't load roles. Is the server running?"; });
+
+const drop = $("drop"), input = $("file");
+drop.onclick = () => input.click();
+drop.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); input.click(); } };
+drop.ondragover = e => { e.preventDefault(); drop.classList.add("over"); };
+drop.ondragleave = () => drop.classList.remove("over");
+drop.ondrop = e => { e.preventDefault(); drop.classList.remove("over"); pick(e.dataTransfer.files[0]); };
+input.onchange = () => pick(input.files[0]);
+function pick(f) { file = f || null; $("fname").textContent = file ? file.name : ""; $("err").textContent = ""; }
+
+$("form").onsubmit = async e => {
+  e.preventDefault();
+  $("err").textContent = "";
+  if (!file) return $("err").textContent = "Choose your resume PDF first.";
+  if (file.size > 10 * 1024 * 1024) return $("err").textContent = "That file is over 10 MB.";
+  const weeks = +$("weeks").value;
+  if (!(weeks >= 2 && weeks <= 24)) return $("err").textContent = "Weeks must be between 2 and 24.";
+
+  const fd = new FormData();
+  fd.append("resume", file); fd.append("target_role", $("role").value);
+  fd.append("weeks_available", weeks); fd.append("language", $("lang").value);
+
+  $("go").disabled = true; $("go").textContent = "Agent is working…";
+  $("trace").innerHTML = ""; $("traceCard").classList.remove("hidden"); $("results").classList.add("hidden");
+  try {
+    const res = await fetch("/analyze/stream", { method: "POST", body: fd });
+    if (!res.ok) { const d = await res.json().catch(() => ({})); throw new Error(d.detail || `Request failed (${res.status})`); }
+    const reader = res.body.getReader(), dec = new TextDecoder();
+    let buf = "";
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, { stream: true });
+      let i;
+      while ((i = buf.indexOf("\n\n")) >= 0) {
+        const block = buf.slice(0, i); buf = buf.slice(i + 2);
+        let ev = "message", data = "";
+        for (const line of block.split("\n")) {
+          if (line.startsWith("event:")) ev = line.slice(6).trim();
+          else if (line.startsWith("data:")) data += line.slice(5).trim();
+        }
+        if (!data) continue;
+        const obj = JSON.parse(data);
+        if (ev === "step") addStep(obj);
+        else if (ev === "result") render(obj);
+        else if (ev === "fatal") throw new Error(obj.message);
+      }
+    }
+  } catch (err) {
+    $("err").textContent = err.message;
+  } finally {
+    $("go").disabled = false; $("go").textContent = "Check my readiness";
+  }
+};
+
+function addStep(s) {
+  const li = document.createElement("li");
+  li.className = s.type;
+  if (s.type === "tool_call") {
+    const args = s.input && Object.keys(s.input).length ? ` <code>${esc(JSON.stringify(s.input))}</code>` : "";
+    li.innerHTML = `<strong>${esc(s.tool)}</strong>${args}`;
+  } else if (s.type === "final") {
+    li.innerHTML = `<strong>Done.</strong>`;
+  } else {
+    li.textContent = s.summary;
+  }
+  $("trace").appendChild(li);
+}
+
+function render(r) {
+  const g = r.gap_report;
+  $("results").classList.remove("hidden");
+  $("foot").textContent = (r.llm_mode === "mock" ? "Offline mode (rule-based, no AI model). " : `AI model: ${r.llm_mode}. `) +
+    "Openings are sample data with fictional companies. Your resume is deleted right after analysis.";
+  $("final").textContent = (r.final_message || "").replace(/\*\*/g, "");
+  if (!g) { $("sRole").textContent = r.target_role; $("sScore").textContent = "–"; return; }
+
+  $("sRole").textContent = g.role;
+  $("sScore").innerHTML = `${g.readiness_score}<small>/100</small>`;
+  $("sBand").textContent = g.band;
+
+  const stops = [...g.matched.map(s => [s, "var(--green)"]), ...g.partial.map(s => [s, "var(--partial)"]), ...g.missing.map(s => [s, "var(--missing)"])];
+  const road = $("road");
+  road.querySelectorAll(".stop,.you").forEach(n => n.remove());
+  const n = stops.length;
+  stops.forEach(([s, color], i) => {
+    const d = document.createElement("div");
+    d.className = "stop"; d.style.left = `${((i + 0.5) / n) * 100}%`; d.style.background = color;
+    d.innerHTML = `<span>${esc(s.skill)}</span>`; d.title = s.reason;
+    road.appendChild(d);
+  });
+  const pos = n ? ((g.matched.length + 0.5 * g.partial.length) / n) * 100 : 0;
+  const you = document.createElement("div"); you.className = "you"; you.textContent = "You"; you.style.left = `${pos}%`;
+  road.appendChild(you);
+  $("fill").style.width = "0";
+  requestAnimationFrame(() => requestAnimationFrame(() => { $("fill").style.width = `${pos}%`; }));
+
+  $("breakdown").innerHTML = g.score_breakdown.map(l =>
+    `<div class="line"><span>${esc(l.label)}</span><strong class="${l.points < l.max_points ? "lost" : ""}">${l.points}&nbsp;/&nbsp;${l.max_points}</strong></div>`).join("");
+
+  const rm = r.roadmap;
+  $("plan").innerHTML = rm ? rm.weeks.map(w => {
+    const goals = Array.isArray(w.goals) ? w.goals : [w.goals];
+    return `<div class="week"><h3>Week ${w.week}: ${esc((w.focus || []).join(", "))}</h3>
+      <ul>${goals.filter(Boolean).map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+      ${w.mini_project ? `<p><strong>Mini-project:</strong> ${esc(w.mini_project)}</p>` : ""}
+      ${(w.resources || []).length ? `<p>${w.resources.map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}
+    </div>`; }).join("") + (rm.later && rm.later.length ? `<p><strong>After this plan, learn next:</strong> ${esc(rm.later.join(", "))}</p>` : "")
+    : `<p class="muted">No plan was built.</p>`;
+
+  $("matches").innerHTML = (r.matches || []).length ? r.matches.map(m =>
+    `<div class="match"><div><strong>${esc(m.role)}</strong> · ${esc(m.company)}<br>
+     <span class="muted">${esc(m.location)} · ${esc(m.mode)} · ${esc(m.stipend)}</span>
+     ${m.missing_skills.length ? `<br><span class="muted">Missing: ${esc(m.missing_skills.join(", "))}</span>` : ""}</div>
+     <div class="pct">${m.match_percent}%</div></div>`).join("") : `<p class="muted">No openings matched.</p>`;
+
+  const o = r.outreach;
+  $("outreach").innerHTML = o ? `<p class="muted">${esc(o.channel === "email" ? "Email" : "LinkedIn")} message to ${esc(o.company)}</p>
+    ${o.subject ? `<p><strong>Subject:</strong> ${esc(o.subject)}</p>` : ""}
+    <pre class="out" id="outText">${esc(o.message)}</pre><button class="ghost" id="copy" type="button">Copy</button>` : `<p class="muted">No message drafted.</p>`;
+  if (o) $("copy").onclick = () => navigator.clipboard.writeText(o.message).then(() => { $("copy").textContent = "Copied"; setTimeout(() => $("copy").textContent = "Copy", 1500); });
+}
+</script>
 </body>
 </html>

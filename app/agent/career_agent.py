@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, BinaryIO
 
-from app.llm import BaseLLM, LLMError, Message, get_llm
+from app.llm import BaseLLM, LLMError, Message, MockLLM, get_llm
 from app.models import (
     LANGUAGE_NAMES,
     AgentResult,
@@ -287,7 +287,7 @@ TOOLS: dict[str, Tool] = {
 
 SYSTEM_PROMPT = """You are CareerGPS, a career readiness agent for students at tier-2 and tier-3 colleges in India, many of whom have no placement mentor to tell them where they stand or what to do next.
 
-You work by calling tools. Before EVERY tool call, write one short sentence saying what you are about to do and why.
+You work by calling tools. Before EVERY tool call, write one short sentence saying what you are about to do and why. Put that sentence in the message text, never inside tool arguments. Tool arguments must be valid JSON matching the schema.
 
 Typical flow:
 1. parse_resume
@@ -318,6 +318,35 @@ def _fallback_final(state: AgentState) -> str:
     if top:
         parts.append(f"The most important gap is {top}; start on it this week using the first resource in your roadmap.")
     return " ".join(parts)
+
+
+def _finish_with_rules(state: AgentState, step: Callable[..., dict[str, Any]]) -> Iterator[dict[str, Any]]:
+    """Run whichever tools haven't completed yet, in the standard order, with the mock LLM (rule-based paths)."""
+    rules = MockLLM()
+    plan: list[tuple[str, Callable[[], bool], Callable[[], dict[str, Any]]]] = [
+        ("parse_resume", lambda: state.profile is None, lambda: {}),
+        ("lookup_role", lambda: state.requirements is None, lambda: {"role": state.target_role}),
+        ("analyze_gaps", lambda: state.gaps is None, lambda: {}),
+        ("build_roadmap", lambda: state.roadmap is None, lambda: {"weeks": state.weeks}),
+        ("match_jobs", lambda: not state.matches, lambda: {"limit": 5}),
+        (
+            "draft_outreach",
+            lambda: state.outreach is None and bool(state.matches),
+            lambda: {"opening_id": state.matches[0].id, "channel": "linkedin"},
+        ),
+    ]
+    for name, needed, make_args in plan:
+        if not needed():
+            continue
+        args = make_args()
+        tool = TOOLS[name]
+        yield step("tool_call", f"Calling {name}", tool=name, input_=args)
+        try:
+            result = tool.run(state, rules, args)
+            yield step("tool_result", tool.summarize(state, result), tool=name)
+        except Exception as exc:
+            yield step("error", str(exc), tool=name)
+            return
 
 
 def run_agent_events(
@@ -356,9 +385,17 @@ def run_agent_events(
             reply = llm.chat(messages, system=SYSTEM_PROMPT, tools=schemas)
         except LLMError as exc:
             yield step("error", f"The AI model failed: {exc}")
+            # Degrade instead of dying: finish the remaining steps with the rule-based tools.
+            yield step("thought", "The AI model is unavailable, so I'll finish the remaining steps with the rule-based tools.")
+            yield from _finish_with_rules(state, step)
+            final_message = _fallback_final(state)
+            yield step("final", final_message)
             break
 
         if not reply.tool_calls:
+            if state.gaps is not None and (state.roadmap is None or not state.matches or state.outreach is None):
+                # The model stopped early; complete the skipped actions so the student gets the full result.
+                yield from _finish_with_rules(state, step)
             final_message = reply.text.strip() or _fallback_final(state)
             yield step("final", final_message)
             break
