@@ -63,6 +63,7 @@ class SkillReq(BaseModel):
 class RoleRequirements(BaseModel):
     role: str
     family: str = ""
+    aliases: list[str] = Field(default_factory=list)  # other names people type for this role
     summary: str = ""
     required_skills: list[SkillReq] = Field(default_factory=list)
     nice_to_have: list[SkillReq] = Field(default_factory=list)
