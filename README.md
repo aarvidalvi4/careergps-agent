@@ -72,7 +72,7 @@ For a college placement cell, the same API can assess a whole batch of resumes i
 
 - **The score is computed by code, not the LLM.** It is deterministic and every point is shown, so it can be checked and challenged.
 - **The LLM is told not to invent anything.** Resume extraction is limited to what the resume says, and skill judgements must quote evidence from the resume.
-- **No fake job claims.** Openings are labelled in the app and the API as sample data with fictional companies.
+- **No fake job claims.** Openings are labelled as sample data with fictional companies, on the results page and in the data file.
 - **Privacy.** Resumes are processed per request and the temporary file is deleted straight after. No accounts and nothing stored. API keys stay on the server and are never sent to the browser or committed to the repo.
 - **Graceful failure.** If the AI model fails or is rate-limited, the agent finishes with rule-based tools instead of showing a broken result. Scanned PDFs and non-PDF uploads are rejected with a clear message.
 - **Honest tone.** The final summary is instructed to be honest and encouraging, never generic, and to only use numbers the tools returned.
